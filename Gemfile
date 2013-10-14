@@ -10,5 +10,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use debugger
-# gem 'debugger'
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner' # TODO strategy
+end

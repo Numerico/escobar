@@ -4,6 +4,10 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+# USE DUMMY APP FOR TESTS
+ENV["RAILS_ENV"] ||= "test"
+ENV["RAILS_ROOT"] ||= File.expand_path(File.dirname(__FILE__) + '/../../spec/dummy/')
+
 require 'cucumber/rails'
 
 # Capybara defaults to CSS3 selectors rather than XPath.

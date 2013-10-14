@@ -1,7 +1,8 @@
 Given(/^"(.*?)" is parsed as Bencode$/) do |string|
-  pending # express the regexp above with the code you wish you had
+  @output = BEncodr.bdecode string
 end
 
 Then(/^I should get back "(.*?)" as a "(.*?)"$/) do |string, type|
-  pending # express the regexp above with the code you wish you had
+  @output.should eq string
+  @output.class.to_s.should eq type
 end

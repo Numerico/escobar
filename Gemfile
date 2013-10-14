@@ -12,5 +12,5 @@ gemspec
 
 group :test do
   gem 'cucumber-rails', require: false
-  gem 'database_cleaner' # TODO strategy
+  gem 'database_cleaner'
 end

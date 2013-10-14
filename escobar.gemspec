@@ -11,11 +11,12 @@ Gem::Specification.new do |s|
   s.email       = ["webmaster@numerica.cl"]
   s.homepage    = "https://github.com/Numerico/escobar"
   s.summary     = "A Torrent Tracker as a Rails Engine"
-  s.description = "TODO"
+  s.description = "A controller, models and functions to handle torrents"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.0.0"
+  s.add_dependency "bencodr"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency 'rspec-rails',  '~> 2.13'

@@ -5,4 +5,4 @@ Feature: Interpret Bencode
 
   Scenario: Read Bencoded string
     Given "4:spam" is parsed as Bencode
-    Then I should get back "spam" as a "string"
+    Then I should get back "spam" as a "String"

@@ -7,11 +7,11 @@ require "escobar/version"
 Gem::Specification.new do |s|
   s.name        = "escobar"
   s.version     = Escobar::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Escobar."
-  s.description = "TODO: Description of Escobar."
+  s.authors     = ["numerico"]
+  s.email       = ["webmaster@numerica.cl"]
+  s.homepage    = "https://github.com/Numerico/escobar"
+  s.summary     = "A Torrent Tracker as a Rails Engine"
+  s.description = "TODO"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
@@ -19,3 +19,4 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "sqlite3"
 end
+

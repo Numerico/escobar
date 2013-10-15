@@ -10,3 +10,7 @@ Feature: Interpret Bencode
   Scenario: Wrong Bencoded string
     Given "5:spam" is parsed as Bencode
     Then an error should be raised
+
+  Scenario: Write Bencoded string
+    Given "spam" is parsed to Bencode
+    Then I should get back "4:spam" as a "String"

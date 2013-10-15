@@ -1,6 +1,6 @@
-Given /^"(.*?)" is parsed as Bencode$/ do |string|
+Given /^"(.*?)" is parsed (as|to) Bencode$/ do |string, direction|
   begin
-    @output = BEncodr.bdecode string
+    @output = direction == "to" ? BEncodr.bencode(string) : BEncodr.bdecode(string)
   rescue => @error
   end
 end

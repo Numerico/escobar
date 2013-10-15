@@ -6,3 +6,7 @@ Feature: Interpret Bencode
   Scenario: Read Bencoded string
     Given "4:spam" is parsed as Bencode
     Then I should get back "spam" as a "String"
+
+  Scenario: Wrong Bencoded string
+    Given "5:spam" is parsed as Bencode
+    Then an error should be raised

@@ -36,3 +36,11 @@ Feature: Interpret Bencode
   Scenario: Leading zero integer
     Given "i03e" is parsed as Bencode
       Then an error should be raised
+
+  Scenario: Read Bencoded list
+    Given "l4:spam4:eggse" is parsed as Bencode
+      Then I should get back "['spam', 'eggs']" as "Array"
+
+   Scenario: Write Bencoded list
+     Given "['spam','eggs'] (Array)" is parsed to Bencode
+       Then I should get back "l4:spam4:eggse" as "String"

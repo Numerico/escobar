@@ -1,7 +1,11 @@
+def evaled?(type)
+  type == "Array" || type == "Hash"
+end
+
 Given /^"(\S*?)(\s\(.*\))?" is parsed (as|to) Bencode$/ do |param, type, direction|
   unless type.nil?
   	type = type.gsub /[\(\)\s]/, ''
-    param = type == "Array" ? eval(param) : Kernel.send(type, param)
+    param = evaled?(type) ? eval(param) : Kernel.send(type, param)
   end
   begin
     @output = direction == "to" ? BEncodr.bencode(param) : BEncodr.bdecode(param)
@@ -11,7 +15,7 @@ end
 
 Then /^I should get back "(.*?)" as "(.*?)"$/ do |string, type|
   @output.should be_a_kind_of eval(type)
-  expected = type == "Array" ? eval(string) : Kernel.send(type, string)
+  expected = evaled?(type) ? eval(string) : Kernel.send(type, string)
   @output.should eq expected
 end
 

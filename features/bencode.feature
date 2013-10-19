@@ -41,6 +41,22 @@ Feature: Interpret Bencode
     Given "l4:spam4:eggse" is parsed as Bencode
       Then I should get back "['spam', 'eggs']" as "Array"
 
-   Scenario: Write Bencoded list
-     Given "['spam','eggs'] (Array)" is parsed to Bencode
-       Then I should get back "l4:spam4:eggse" as "String"
+  Scenario: Write Bencoded list
+    Given "['spam','eggs'] (Array)" is parsed to Bencode
+      Then I should get back "l4:spam4:eggse" as "String"
+
+  Scenario: Read Bencoded dictionary
+    Given "d3:cow3:moo4:spam4:eggse" is parsed as Bencode
+      Then I should get back "{'cow' => 'moo', 'spam' => 'eggs'}" as "Hash"	
+
+  Scenario: Write Bencoded dictionary
+    Given "{'cow'=>'moo','spam'=>'eggs'} (Hash)" is parsed to Bencode
+      Then I should get back "d3:cow3:moo4:spam4:eggse" as "String"
+
+  Scenario: Read nested Bencoded dictionary
+    Given "d4:spaml1:a1:bee" is parsed as Bencode
+      Then I should get back "{'spam' => ['a', 'b']}" as "Hash"
+
+  # TODO
+  # write nested Bencoded dictionary
+  # keys order
